@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ананасовое яблоко</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Literata:opsz,wght@7..72,500..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Главная навигация">
+      <a class="brand" href="#top">Pinea</a>
+      <nav class="nav-links">
+        <a href="#taste">Вкус</a>
+        <a href="#orchard">Сад</a>
+        <a href="#serving">Подача</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="kicker">Коллекционный фрукт из садов Одиссеи</p>
+          <h1 id="hero-title">Ананасовое яблоко</h1>
+          <p class="hero-copy">
+            Солнечная кислинка ананаса, плотный яблочный хруст и кожура,
+            похожая на маленькую броню тропического сада.
+          </p>
+          <div class="hero-actions" aria-label="Короткие свойства фрукта">
+            <a class="primary-link" href="#taste">Разобрать вкус</a>
+            <a class="ghost-link" href="#orchard">Посмотреть сад</a>
+          </div>
+        </div>
+
+        <figure class="fruit-stage" aria-label="Ананасовое яблоко в разрезе">
+          <img
+            class="whole-fruit"
+            src="assets/apple2-removebg-preview.png"
+            alt="Цельное ананасовое яблоко, разрезанное пополам"
+          />
+          <figcaption>
+            <span>Сорт</span>
+            <strong>Golden Orchard</strong>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="intro-band" aria-label="Краткая карточка сорта">
+        <div class="intro-grid">
+          <article>
+            <span class="metric">14</span>
+            <p>дней раскрывается аромат после сбора</p>
+          </article>
+          <article>
+            <span class="metric">3</span>
+            <p>слоя вкуса: мед, яблоко и терпкая хвоя</p>
+          </article>
+          <article>
+            <span class="metric">1852</span>
+            <p>год первой легенды о гибридном саде</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="taste-section" id="taste" aria-labelledby="taste-title">
+        <div class="section-heading">
+          <p class="kicker">Портрет вкуса</p>
+          <h2 id="taste-title">Хрустит как яблоко, пахнет как полдень</h2>
+        </div>
+
+        <div class="taste-layout">
+          <div class="slice-column" aria-hidden="true">
+            <img
+              src="assets/apple1-removebg-preview.png"
+              alt=""
+              class="slice-stack"
+            />
+          </div>
+
+          <div class="note-grid">
+            <article class="note-card">
+              <span class="note-index">01</span>
+              <h3>Первый надкус</h3>
+              <p>
+                Сочная мякоть дает яблочную плотность, но оставляет теплый
+                ананасовый шлейф без приторности.
+              </p>
+            </article>
+            <article class="note-card">
+              <span class="note-index">02</span>
+              <h3>Середина</h3>
+              <p>
+                Вкус становится глубже: медовая кислота, немного зеленой травы
+                и легкая пряность у кожуры.
+              </p>
+            </article>
+            <article class="note-card">
+              <span class="note-index">03</span>
+              <h3>Послевкусие</h3>
+              <p>
+                Остается свежесть, похожая на прохладный сок после долгой
+                прогулки по садовой тропе.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="orchard-section" id="orchard" aria-labelledby="orchard-title">
+        <div class="orchard-copy">
+          <p class="kicker">Место происхождения</p>
+          <h2 id="orchard-title">Сад, где тропики встретились с яблонями</h2>
+          <p>
+            Полянка не выглядит лабораторией. Здесь ряды ананасовых крон
+            соседствуют с яблонями, а сборщики выбирают плоды не по размеру, а
+            по звуку: спелый плод отвечает сухим, чистым щелчком.
+          </p>
+        </div>
+        <div class="orchard-window">
+          <img
+            src="assets/apple3.jpeg"
+            alt="Сгенерированная полянка с садами ананасовых яблок"
+          />
+        </div>
+      </section>
+
+      <section class="serving-section" id="serving" aria-labelledby="serving-title">
+        <div class="section-heading compact">
+          <p class="kicker">Как подать</p>
+          <h2 id="serving-title">Три спокойных сценария</h2>
+        </div>
+
+        <div class="serving-grid">
+          <article class="serving-card">
+            <h3>Утро</h3>
+            <p>
+              Тонкие кружки, холодный йогурт, поджаренный овес и немного
+              лимонной цедры.
+            </p>
+          </article>
+          <article class="serving-card feature">
+            <img
+              src="assets/apple2-removebg-preview.png"
+              alt="Ананасовое яблоко для подачи"
+            />
+            <div>
+              <h3>Полдень</h3>
+              <p>
+                Крупные дольки, твердый сыр, зеленый базилик и сухой сидр.
+              </p>
+            </div>
+          </article>
+          <article class="serving-card">
+            <h3>Вечер</h3>
+            <p>
+              Быстрая карамелизация на сковороде, сливочное масло и щепоть
+              крупной соли.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Pinea Research Orchard</p>
+      <a href="#top">Наверх</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
