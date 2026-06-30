@@ -64,15 +64,51 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: "Literata", Georgia, serif;
   font-size: 1.18rem;
   font-weight: 800;
+}
+
+.brand-mark {
+  display: inline-flex;
+  color: var(--butter);
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.brand-mark svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+  transform: rotate(-10deg) scale(1.08);
 }
 
 .nav-links {
   display: flex;
   gap: 6px;
   align-items: center;
+}
+
+.nav-leaf {
+  display: inline-flex;
+  color: rgba(245, 213, 111, 0.55);
+  pointer-events: none;
+}
+
+.nav-leaf svg {
+  display: block;
+  width: 11px;
+  height: 11px;
+}
+
+.nav-leaf:nth-of-type(2) svg {
+  transform: rotate(180deg);
 }
 
 .nav-links a,
@@ -216,27 +252,85 @@ h3 {
 }
 
 .fruit-stage {
+  position: relative;
   align-self: center;
-  justify-self: center;
-  width: min(360px, 36vw);
-  min-width: 260px;
+  justify-self: end;
+  width: min(440px, 42vw);
+  min-width: 280px;
   margin: 0;
+  margin-right: clamp(-36px, -2.2vw, 0px);
   display: grid;
   justify-items: center;
   gap: 12px;
 }
 
-.whole-fruit {
-  width: 100%;
-  max-height: clamp(330px, 52vh, 500px);
-  object-fit: contain;
-  filter: drop-shadow(0 36px 38px rgba(20, 32, 23, 0.48));
-  transform: translateY(var(--fruit-shift, 0px)) rotate(-2deg);
-  transition: transform 280ms ease-out;
+.fruit-stage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -8% -12% 16%;
+  background: radial-gradient(
+    58% 54% at 50% 42%,
+    rgba(245, 213, 111, 0.5),
+    rgba(230, 168, 61, 0.2) 46%,
+    transparent 72%
+  );
+  filter: blur(8px);
+  pointer-events: none;
 }
 
-.fruit-stage:hover .whole-fruit {
-  transform: translateY(calc(var(--fruit-shift, 0px) - 8px)) rotate(1deg);
+.fruit-stage::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 12%;
+  width: 64%;
+  height: 42px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(20, 32, 23, 0.4), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.fruit-swap {
+  position: relative;
+  width: 100%;
+}
+
+.fruit-img {
+  width: 100%;
+  max-height: clamp(360px, 58vh, 560px);
+  object-fit: contain;
+  filter: drop-shadow(0 28px 30px rgba(20, 32, 23, 0.45))
+    drop-shadow(0 6px 8px rgba(20, 32, 23, 0.3));
+  transition:
+    opacity 420ms ease,
+    transform 420ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.fruit-whole {
+  position: relative;
+  transform: translateY(var(--fruit-shift, 0px)) rotate(-2deg);
+}
+
+.fruit-split {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(calc(var(--fruit-shift, 0px) + 10px)) scale(0.96);
+}
+
+.fruit-stage:hover .fruit-whole,
+.fruit-stage:focus-within .fruit-whole {
+  opacity: 0;
+  transform: translateY(calc(var(--fruit-shift, 0px) - 6px)) rotate(1deg) scale(0.97);
+}
+
+.fruit-stage:hover .fruit-split,
+.fruit-stage:focus-within .fruit-split {
+  opacity: 1;
+  transform: translateY(var(--fruit-shift, 0px)) scale(1);
 }
 
 .fruit-stage figcaption {
@@ -817,10 +911,11 @@ body::after {
 }
 
 .site-footer {
+  position: relative;
   width: var(--wide);
   min-height: 96px;
   margin: 0 auto;
-  padding: 24px 0 34px;
+  padding: 46px 0 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -829,9 +924,80 @@ body::after {
   border-top: 1px solid rgba(54, 90, 56, 0.18);
 }
 
-.site-footer p {
+.footer-vine {
+  position: absolute;
+  top: -2px;
+  color: var(--leaf);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.footer-vine svg {
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+.footer-vine--left {
+  right: calc(50% + 44px);
+  transform: rotate(6deg);
+  transform-origin: top center;
+}
+
+.footer-vine--right {
+  left: calc(50% + 44px);
+  transform: scaleX(-1) rotate(6deg);
+  transform-origin: top center;
+}
+
+.footer-sprig {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--moss);
+}
+
+.footer-sprig svg {
+  display: block;
+  width: 76px;
+  height: auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 0;
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.05rem;
   font-weight: 800;
+}
+
+.leaf-sep {
+  display: inline-flex;
+  color: var(--gold);
+}
+
+.leaf-sep svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.leaf-sep:last-of-type svg {
+  transform: rotate(180deg);
+}
+
+.up-sprout {
+  display: inline-flex;
+  color: var(--moss);
+}
+
+.up-sprout svg {
+  display: block;
+  width: 16px;
+  height: 16px;
 }
 
 .site-footer a {
@@ -850,6 +1016,7 @@ body::after {
     width: min(340px, 70vw);
     justify-self: end;
     margin-top: -24px;
+    margin-right: 0;
   }
 
   .intro-grid,
@@ -916,6 +1083,10 @@ body::after {
 
   .nav-links {
     gap: 2px;
+  }
+
+  .nav-leaf {
+    display: none;
   }
 
   .nav-links a {

@@ -103,7 +103,7 @@ const prefersReducedMotion = window.matchMedia(
 
 if (!prefersReducedMotion) {
   const backdrop = document.querySelector(".hero-backdrop");
-  const fruit = document.querySelector(".whole-fruit");
+  const fruit = document.querySelector(".fruit-stage");
 
   const moveScene = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
