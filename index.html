@@ -18,6 +18,7 @@
       <nav class="nav-links">
         <a href="#taste">Вкус</a>
         <a href="#orchard">Сад</a>
+        <a href="#creations">Рецепты</a>
         <a href="#serving">Подача</a>
       </nav>
     </header>
@@ -77,14 +78,27 @@
         <div class="taste-layout">
           <div class="slice-column" aria-hidden="true">
             <img
+              src="assets/apple2-removebg-preview.png"
+              alt=""
+              class="slice-layer is-active"
+              data-note="0"
+            />
+            <img
               src="assets/apple1-removebg-preview.png"
               alt=""
-              class="slice-stack"
+              class="slice-layer"
+              data-note="1"
+            />
+            <img
+              src="assets/smoozie.png"
+              alt=""
+              class="slice-layer slice-layer--blend"
+              data-note="2"
             />
           </div>
 
           <div class="note-grid">
-            <article class="note-card">
+            <article class="note-card" data-note="0" tabindex="0">
               <span class="note-index">01</span>
               <h3>Первый надкус</h3>
               <p>
@@ -92,7 +106,7 @@
                 ананасовый шлейф без приторности.
               </p>
             </article>
-            <article class="note-card">
+            <article class="note-card" data-note="1" tabindex="0">
               <span class="note-index">02</span>
               <h3>Середина</h3>
               <p>
@@ -100,7 +114,7 @@
                 и легкая пряность у кожуры.
               </p>
             </article>
-            <article class="note-card">
+            <article class="note-card" data-note="2" tabindex="0">
               <span class="note-index">03</span>
               <h3>Послевкусие</h3>
               <p>
@@ -130,6 +144,78 @@
         </div>
       </section>
 
+      <section class="creations" id="creations" aria-labelledby="creations-title">
+        <div class="section-heading">
+          <p class="kicker">Лаборатория вкуса</p>
+          <h2 id="creations-title">Три превращения одного плода</h2>
+          <p class="creations-lede">
+            Один и тот же гибрид становится холодным напитком, тёплым десертом
+            и фруктовым льдом. Наведите на название внизу — и витрина сменится.
+          </p>
+        </div>
+
+        <div class="creations-showcase">
+          <article class="showcase-feature reveal">
+            <div class="creation-media">
+              <img
+                class="showcase-img"
+                src="assets/pie.png"
+                alt="Ананасово-яблочный пирог на блюде и отрезанный кусок на тарелке"
+                loading="lazy"
+              />
+            </div>
+            <div class="creation-body">
+              <span class="creation-tag showcase-tag">Десерт дня</span>
+              <h3 class="showcase-name">Tarte&nbsp;Solar</h3>
+              <p class="showcase-desc">
+                Слоёное тесто, карамелизованные дольки и тёплая корица.
+                Запекается до золотой корки, а ананасовая кислота не даёт
+                начинке стать приторной.
+              </p>
+              <ul class="creation-meta showcase-meta">
+                <li>Слоёное тесто</li>
+                <li>Карамель</li>
+                <li>Корица</li>
+                <li>45 минут</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="showcase-tabs" role="tablist" aria-label="Выбор рецепта">
+            <button
+              class="showcase-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-key="pie"
+            >
+              <span class="tab-num">01</span>
+              <span class="tab-name">Tarte Solar</span>
+            </button>
+            <button
+              class="showcase-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-key="smoothie"
+            >
+              <span class="tab-num">02</span>
+              <span class="tab-name">Piña Frío</span>
+            </button>
+            <button
+              class="showcase-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-key="icecream"
+            >
+              <span class="tab-num">03</span>
+              <span class="tab-name">Papple!</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section class="serving-section" id="serving" aria-labelledby="serving-title">
         <div class="section-heading compact">
           <p class="kicker">Как подать</p>
@@ -137,31 +223,37 @@
         </div>
 
         <div class="serving-grid">
-          <article class="serving-card">
-            <h3>Утро</h3>
-            <p>
-              Тонкие кружки, холодный йогурт, поджаренный овес и немного
-              лимонной цедры.
-            </p>
+          <article class="serving-card serving-card--morning">
+            <div class="serving-sky" aria-hidden="true"><span class="serving-sun"></span></div>
+            <div class="serving-body">
+              <span class="serving-time">07:30 · Завтрак</span>
+              <h3>Утро</h3>
+              <p>
+                Тонкие кружки, холодный йогурт, поджаренный овес и немного
+                лимонной цедры.
+              </p>
+            </div>
           </article>
-          <article class="serving-card feature">
-            <img
-              src="assets/apple2-removebg-preview.png"
-              alt="Ананасовое яблоко для подачи"
-            />
-            <div>
+          <article class="serving-card serving-card--noon">
+            <div class="serving-sky" aria-hidden="true"><span class="serving-sun"></span></div>
+            <div class="serving-body">
+              <span class="serving-time">13:00 · Обед</span>
               <h3>Полдень</h3>
               <p>
                 Крупные дольки, твердый сыр, зеленый базилик и сухой сидр.
               </p>
             </div>
           </article>
-          <article class="serving-card">
-            <h3>Вечер</h3>
-            <p>
-              Быстрая карамелизация на сковороде, сливочное масло и щепоть
-              крупной соли.
-            </p>
+          <article class="serving-card serving-card--evening">
+            <div class="serving-sky" aria-hidden="true"><span class="serving-sun"></span></div>
+            <div class="serving-body">
+              <span class="serving-time">21:00 · Ужин</span>
+              <h3>Вечер</h3>
+              <p>
+                Быстрая карамелизация на сковороде, сливочное масло и щепоть
+                крупной соли.
+              </p>
+            </div>
           </article>
         </div>
       </section>
