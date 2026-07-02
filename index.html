@@ -3,16 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ананасовое яблоко</title>
+    <title>Ананасовое яблоко · Каталог садов Одиссеи</title>
+    <meta
+      name="description"
+      content="Ананасовое яблоко — коллекционный гибрид из садов Одиссеи. Портрет вкуса, происхождение, рецепты и подача."
+    />
+    <meta name="theme-color" content="#13251a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ананасовое яблоко · Каталог садов Одиссеи" />
+    <meta
+      property="og:description"
+      content="Коллекционный фрукт-гибрид: солнечная кислинка ананаса и плотный яблочный хруст."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 32 32'%3E%3Crect x='-4' y='-4' width='32' height='32' rx='7' fill='%2313251a'/%3E%3Cpath d='M12 22V11' stroke='%23f0b23c' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M12 15C10.5 8.5 6 4.5 1 5C2 11.5 6.5 15.5 12 15Z' fill='%23f0b23c'/%3E%3Cpath d='M12 13C13.5 7 18 4 23 4.5C22 10.5 17.5 13.5 12 13Z' fill='%23f0b23c' opacity='0.8'/%3E%3Ccircle cx='12' cy='9' r='2' fill='%23f0b23c'/%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Literata:opsz,wght@7..72,500..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body id="top">
     <header class="site-header" aria-label="Главная навигация">
       <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">
@@ -23,94 +38,116 @@
             <circle cx="12" cy="9" r="2.1" fill="currentColor" />
           </svg>
         </span>
-        Pinea
+        <span class="brand-name">Pinea</span>
+        <span class="brand-tag">Каталог</span>
       </a>
       <nav class="nav-links">
         <a href="#taste">Вкус</a>
-        <span class="nav-leaf" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C6 8 5 15 12 22C19 15 18 8 12 2Z" fill="currentColor" />
-          </svg>
-        </span>
         <a href="#orchard">Сад</a>
-        <span class="nav-leaf" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C6 8 5 15 12 22C19 15 18 8 12 2Z" fill="currentColor" />
-          </svg>
-        </span>
         <a href="#creations">Рецепты</a>
-        <span class="nav-leaf" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C6 8 5 15 12 22C19 15 18 8 12 2Z" fill="currentColor" />
-          </svg>
-        </span>
         <a href="#serving">Подача</a>
       </nav>
     </header>
 
-    <main id="top">
+    <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-backdrop" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="kicker">Коллекционный фрукт из садов Одиссеи</p>
-          <h1 id="hero-title">Ананасовое яблоко</h1>
-          <p class="hero-copy">
-            Солнечная кислинка ананаса, плотный яблочный хруст и кожура,
-            похожая на маленькую броню тропического сада.
-          </p>
-          <div class="hero-actions" aria-label="Короткие свойства фрукта">
-            <a class="primary-link" href="#taste">Разобрать вкус</a>
-            <a class="ghost-link" href="#orchard">Посмотреть сад</a>
+        <div class="hero-inner">
+          <div class="hero-lead">
+            <p class="eyebrow"><span class="eyebrow-tick">№14</span> Каталог садов Одиссеи</p>
+            <h1 id="hero-title">Ананасовое <em>яблоко</em></h1>
+            <p class="hero-copy">
+              Солнечная кислинка ананаса, плотный яблочный хруст и кожура,
+              похожая на маленькую броню тропического сада.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--solid" href="#taste">Разобрать вкус</a>
+              <a class="btn btn--ghost" href="#orchard">Посмотреть сад</a>
+            </div>
+            <dl class="spec">
+              <div class="spec-item">
+                <dt>Сорт</dt>
+                <dd>Golden Orchard</dd>
+              </div>
+              <div class="spec-item">
+                <dt>Класс</dt>
+                <dd>Ananas × Malus</dd>
+              </div>
+              <div class="spec-item">
+                <dt>Сезон</dt>
+                <dd>Позднее лето</dd>
+              </div>
+            </dl>
           </div>
-        </div>
 
-        <figure class="fruit-stage" aria-label="Ананасовое яблоко в разрезе">
-          <div class="fruit-swap">
-            <img
-              class="fruit-img fruit-whole"
-              src="assets/apple2-removebg-preview.png"
-              alt="Цельное ананасовое яблоко, разрезанное пополам"
-            />
-            <img
-              class="fruit-img fruit-split"
-              src="assets/apple-split.png"
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <span>Сорт</span>
-            <strong>Golden Orchard</strong>
-          </figcaption>
-        </figure>
+          <figure class="hero-stage fruit-stage" aria-label="Ананасовое яблоко в разрезе">
+            <span class="seal" aria-hidden="true">
+              <svg viewBox="0 0 260 260">
+                <defs>
+                  <path
+                    id="seal-ring"
+                    d="M130,130 m-100,0 a100,100 0 1,1 200,0 a100,100 0 1,1 -200,0"
+                  />
+                </defs>
+                <circle class="seal-outer" cx="130" cy="130" r="118" />
+                <circle class="seal-inner" cx="130" cy="130" r="82" />
+                <g class="seal-ticks">
+                  <line x1="130" y1="14" x2="130" y2="26" />
+                  <line x1="130" y1="234" x2="130" y2="246" />
+                  <line x1="14" y1="130" x2="26" y2="130" />
+                  <line x1="234" y1="130" x2="246" y2="130" />
+                </g>
+                <text class="seal-text">
+                  <textPath href="#seal-ring" startOffset="0">
+                    PINEA · GOLDEN ORCHARD · СПЕЦИМЕН №14 · ANANAS × MALUS ·
+                  </textPath>
+                </text>
+              </svg>
+            </span>
+            <div class="fruit-swap">
+              <img
+                class="fruit-img fruit-whole"
+                src="assets/apple2-removebg-preview.png"
+                alt="Ананасовое яблоко, разрезанное пополам"
+              />
+              <img
+                class="fruit-img fruit-split"
+                src="assets/apple-split.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Наведите — плод раскроется</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="intro-band" aria-label="Краткая карточка сорта">
         <div class="intro-grid">
-          <article>
+          <article class="intro-cell">
             <span class="metric">14</span>
             <p>дней раскрывается аромат после сбора</p>
           </article>
-          <article>
+          <article class="intro-cell">
             <span class="metric">3</span>
-            <p>слоя вкуса: мед, яблоко и терпкая хвоя</p>
+            <p>слоя вкуса: мёд, яблоко и терпкая хвоя</p>
           </article>
-          <article>
+          <article class="intro-cell">
             <span class="metric">1852</span>
             <p>год первой легенды о гибридном саде</p>
           </article>
         </div>
       </section>
 
-      <section class="taste-section" id="taste" aria-labelledby="taste-title">
+      <section class="taste-section section-cream" id="taste" aria-labelledby="taste-title">
         <div class="section-heading">
-          <p class="kicker">Портрет вкуса</p>
-          <h2 id="taste-title">Хрустит как яблоко, пахнет как полдень</h2>
+          <p class="eyebrow eyebrow--dark">Портрет вкуса</p>
+          <h2 id="taste-title">Хрустит как яблоко,<br />пахнет как полдень</h2>
         </div>
 
         <div class="taste-layout">
           <div class="slice-column" aria-hidden="true">
+            <span class="plate-tag">fig. 14 · разрез</span>
             <img
               src="assets/apple2-removebg-preview.png"
               alt=""
@@ -136,7 +173,7 @@
               <span class="note-index">01</span>
               <h3>Первый надкус</h3>
               <p>
-                Сочная мякоть дает яблочную плотность, но оставляет теплый
+                Сочная мякоть даёт яблочную плотность, но оставляет тёплый
                 ананасовый шлейф без приторности.
               </p>
             </article>
@@ -144,15 +181,15 @@
               <span class="note-index">02</span>
               <h3>Середина</h3>
               <p>
-                Вкус становится глубже: медовая кислота, немного зеленой травы
-                и легкая пряность у кожуры.
+                Вкус становится глубже: медовая кислота, немного зелёной травы
+                и лёгкая пряность у кожуры.
               </p>
             </article>
             <article class="note-card" data-note="2" tabindex="0">
               <span class="note-index">03</span>
               <h3>Послевкусие</h3>
               <p>
-                Остается свежесть, похожая на прохладный сок после долгой
+                Остаётся свежесть, похожая на прохладный сок после долгой
                 прогулки по садовой тропе.
               </p>
             </article>
@@ -162,25 +199,27 @@
 
       <section class="orchard-section" id="orchard" aria-labelledby="orchard-title">
         <div class="orchard-copy">
-          <p class="kicker">Место происхождения</p>
+          <p class="eyebrow">Место происхождения</p>
           <h2 id="orchard-title">Сад, где тропики встретились с яблонями</h2>
           <p>
             Полянка не выглядит лабораторией. Здесь ряды ананасовых крон
             соседствуют с яблонями, а сборщики выбирают плоды не по размеру, а
             по звуку: спелый плод отвечает сухим, чистым щелчком.
           </p>
+          <p class="orchard-note">51°02′ с.ш. · Сады Одиссеи · сбор вручную</p>
         </div>
         <div class="orchard-window">
           <img
             src="assets/apple3.jpeg"
-            alt="Сгенерированная полянка с садами ананасовых яблок"
+            alt="Ряды ананасовых крон рядом с яблонями на закатной садовой поляне"
+            loading="lazy"
           />
         </div>
       </section>
 
-      <section class="creations" id="creations" aria-labelledby="creations-title">
+      <section class="creations section-cream" id="creations" aria-labelledby="creations-title">
         <div class="section-heading">
-          <p class="kicker">Лаборатория вкуса</p>
+          <p class="eyebrow eyebrow--dark">Лаборатория вкуса</p>
           <h2 id="creations-title">Три превращения одного плода</h2>
           <p class="creations-lede">
             Один и тот же гибрид становится холодным напитком, тёплым десертом
@@ -250,9 +289,9 @@
         </div>
       </section>
 
-      <section class="serving-section" id="serving" aria-labelledby="serving-title">
+      <section class="serving-section section-cream" id="serving" aria-labelledby="serving-title">
         <div class="section-heading compact">
-          <p class="kicker">Как подать</p>
+          <p class="eyebrow eyebrow--dark">Как подать</p>
           <h2 id="serving-title">Три спокойных сценария</h2>
         </div>
 
@@ -263,7 +302,7 @@
               <span class="serving-time">07:30 · Завтрак</span>
               <h3>Утро</h3>
               <p>
-                Тонкие кружки, холодный йогурт, поджаренный овес и немного
+                Тонкие кружки, холодный йогурт, поджаренный овёс и немного
                 лимонной цедры.
               </p>
             </div>
@@ -274,7 +313,7 @@
               <span class="serving-time">13:00 · Обед</span>
               <h3>Полдень</h3>
               <p>
-                Крупные дольки, твердый сыр, зеленый базилик и сухой сидр.
+                Крупные дольки, твёрдый сыр, зелёный базилик и сухой сидр.
               </p>
             </div>
           </article>
@@ -294,64 +333,23 @@
     </main>
 
     <footer class="site-footer">
-      <span class="footer-vine footer-vine--left" aria-hidden="true">
-        <svg viewBox="0 0 40 120" fill="none">
-          <path d="M20 0C15 20 25 34 20 54C15 74 24 90 20 116" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          <path d="M20 22C9 21 4 14 4 6C15 7 21 14 20 22Z" fill="currentColor" />
-          <path d="M20 50C31 49 36 42 36 34C25 35 19 42 20 50Z" fill="currentColor" />
-          <path d="M20 80C9 79 4 72 4 64C15 65 21 72 20 80Z" fill="currentColor" />
-          <circle cx="20" cy="114" r="2.6" fill="currentColor" />
-        </svg>
-      </span>
-      <span class="footer-vine footer-vine--right" aria-hidden="true">
-        <svg viewBox="0 0 40 120" fill="none">
-          <path d="M20 0C15 20 25 34 20 54C15 74 24 90 20 116" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          <path d="M20 22C9 21 4 14 4 6C15 7 21 14 20 22Z" fill="currentColor" />
-          <path d="M20 50C31 49 36 42 36 34C25 35 19 42 20 50Z" fill="currentColor" />
-          <path d="M20 80C9 79 4 72 4 64C15 65 21 72 20 80Z" fill="currentColor" />
-          <circle cx="20" cy="114" r="2.6" fill="currentColor" />
-        </svg>
-      </span>
-
-      <span class="footer-sprig" aria-hidden="true">
-        <svg viewBox="0 0 80 50" fill="none">
-          <path d="M40 50V14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M40 32C31 31 25 26 22 18C32 17 39 23 40 32Z" fill="currentColor" />
-          <path d="M40 32C49 31 55 26 58 18C48 17 41 23 40 32Z" fill="currentColor" />
-          <path d="M40 22C33 21 28 17 26 11C34 10 40 15 40 22Z" fill="currentColor" />
-          <path d="M40 22C47 21 52 17 54 11C46 10 40 15 40 22Z" fill="currentColor" />
-          <circle cx="40" cy="9" r="3.4" fill="currentColor" />
-        </svg>
-      </span>
-
-      <p class="footer-brand">
-        <span>Pinea</span>
-        <span class="leaf-sep" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C6 8 5 15 12 22C19 15 18 8 12 2Z" fill="currentColor" />
-            <path d="M12 5V19" stroke="#f2ead2" stroke-width="1.4" stroke-linecap="round" />
-          </svg>
-        </span>
-        <span>Research</span>
-        <span class="leaf-sep" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C6 8 5 15 12 22C19 15 18 8 12 2Z" fill="currentColor" />
-            <path d="M12 5V19" stroke="#f2ead2" stroke-width="1.4" stroke-linecap="round" />
-          </svg>
-        </span>
-        <span>Orchard</span>
-      </p>
-
-      <a href="#top">
-        <span class="up-sprout" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 22V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <path d="M12 13C12 8.5 8.7 5.5 4.5 5.5C4.5 10 7.8 13 12 13Z" fill="currentColor" />
-            <path d="M12 11C12 7 15 4.5 19 4.5C19 8.5 16 11 12 11Z" fill="currentColor" opacity="0.75" />
-          </svg>
-        </span>
-        Наверх
-      </a>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 22V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M12 15C10.5 8.5 6 4.5 1 5C2 11.5 6.5 15.5 12 15Z" fill="currentColor" />
+              <path d="M12 13C13.5 7 18 4 23 4.5C22 10.5 17.5 13.5 12 13Z" fill="currentColor" opacity="0.82" />
+            </svg>
+          </span>
+          <p>
+            <strong>Pinea</strong>
+            <span>Каталог садов Одиссеи</span>
+          </p>
+        </div>
+        <p class="footer-meta">Специмен №14 · Ananas × Malus · Golden Orchard</p>
+        <a class="footer-up" href="#top">Наверх ↑</a>
+      </div>
     </footer>
 
     <script src="script.js"></script>

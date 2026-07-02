@@ -102,30 +102,35 @@ const prefersReducedMotion = window.matchMedia(
 ).matches;
 
 if (!prefersReducedMotion) {
-  const backdrop = document.querySelector(".hero-backdrop");
   const fruit = document.querySelector(".fruit-stage");
 
   const moveScene = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const limit = Math.min(scrollTop, 460);
-    const backdropShift = limit * 0.035;
-    const fruitShift = limit * 0.055;
-
-    if (backdrop) {
-      backdrop.style.transform = `scale(1.02) translateY(${backdropShift}px)`;
-    }
+    const fruitShift = limit * 0.05;
 
     if (fruit) {
       fruit.style.setProperty("--fruit-shift", `${fruitShift}px`);
     }
   };
 
+  // Троттлим скролл через rAF: обновляем сцену не чаще одного кадра.
+  let scrollTicking = false;
+  const onScroll = () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(() => {
+      moveScene();
+      scrollTicking = false;
+    });
+  };
+
   moveScene();
-  window.addEventListener("scroll", moveScene, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   // Плавное появление блоков при прокрутке
   const revealTargets = document.querySelectorAll(
-    ".reveal, .serving-card, .intro-grid article"
+    ".reveal, .section-heading, .serving-card, .intro-grid article"
   );
 
   revealTargets.forEach((el) => el.classList.add("reveal"));
@@ -149,4 +154,57 @@ if (!prefersReducedMotion) {
   } else {
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
+}
+
+// Подсветка текущего раздела в навигации (scrollspy)
+const navLinks = Array.from(document.querySelectorAll(".nav-links a[href^='#']"));
+
+if (navLinks.length && "IntersectionObserver" in window) {
+  const linkFor = new Map();
+  const sections = [];
+
+  navLinks.forEach((link) => {
+    const section = document.querySelector(link.getAttribute("href"));
+    if (section) {
+      linkFor.set(section, link);
+      sections.push(section);
+    }
+  });
+
+  const setCurrent = (section) => {
+    navLinks.forEach((link) => {
+      const isCurrent = link === linkFor.get(section);
+      link.classList.toggle("is-current", isCurrent);
+      if (isCurrent) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      // Берём самый верхний из пересекающихся разделов.
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+      if (visible.length) {
+        setCurrent(visible[0].target);
+      } else if (
+        sections.length &&
+        sections[0].getBoundingClientRect().top > window.innerHeight * 0.5
+      ) {
+        // Выше первого раздела (герой) — снимаем подсветку.
+        navLinks.forEach((link) => {
+          link.classList.remove("is-current");
+          link.removeAttribute("aria-current");
+        });
+      }
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+
+  sections.forEach((section) => spy.observe(section));
 }
